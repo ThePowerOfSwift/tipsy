@@ -49,15 +49,38 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let defaults = UserDefaults.standard
         let intValue = defaults.object(forKey: "default_tip_index")
+        var timeAppClosed = defaults.object(forKey: "time_app_closed") as? Int
+        if (timeAppClosed == nil) {
+            timeAppClosed = 0
+        }
+        let currentTime = Int(NSDate().timeIntervalSince1970)
         if (intValue != nil) {
             tipControl.selectedSegmentIndex = intValue as! Int
             updateTip()
         }
+        if (currentTime - timeAppClosed! < 600) {
+            billField.text = defaults.object(forKey: "bill_last_closed") as? String
+            bill = Double(billField.text!) ?? 0
+            tipControl.selectedSegmentIndex = defaults.object(forKey: "percentage_last_closed") as! Int
+            updateTip()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.set(Int(NSDate().timeIntervalSince1970), forKey: "time_app_closed")
+        defaults.set(tipControl.selectedSegmentIndex, forKey: "percentage_last_closed")
+        defaults.set(billField.text, forKey: "bill_last_closed")
+        
+        defaults.synchronize()
     }
 }
 

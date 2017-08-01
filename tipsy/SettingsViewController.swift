@@ -47,5 +47,4 @@ class SettingsViewController: UIViewController {
             defaultTipControl.selectedSegmentIndex = intValue as! Int
         }
     }
-
 }
