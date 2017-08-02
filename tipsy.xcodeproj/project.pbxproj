@@ -15,6 +15,7 @@
 		117AFADD1F30210600D3BD97 /* tipsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AFADC1F30210600D3BD97 /* tipsyTests.swift */; };
 		117AFAE81F30210600D3BD97 /* tipsyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AFAE71F30210600D3BD97 /* tipsyUITests.swift */; };
 		117AFAF81F30393100D3BD97 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AFAF71F30393100D3BD97 /* SettingsViewController.swift */; };
+		5FF2B9A31F31880A001C39D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2B9A21F31880A001C39D7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		117AFAE71F30210600D3BD97 /* tipsyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsyUITests.swift; sourceTree = "<group>"; };
 		117AFAE91F30210600D3BD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117AFAF71F30393100D3BD97 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5FF2B9A21F31880A001C39D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				117AFAC71F30210500D3BD97 /* AppDelegate.swift */,
+				5FF2B9A21F31880A001C39D7 /* Constants.swift */,
 				117AFAC91F30210500D3BD97 /* TipViewController.swift */,
-				117AFACB1F30210500D3BD97 /* Main.storyboard */,
+				117AFAF71F30393100D3BD97 /* SettingsViewController.swift */,
 				117AFACE1F30210500D3BD97 /* Assets.xcassets */,
+				117AFACB1F30210500D3BD97 /* Main.storyboard */,
 				117AFAD01F30210500D3BD97 /* LaunchScreen.storyboard */,
 				117AFAD31F30210500D3BD97 /* Info.plist */,
-				117AFAF71F30393100D3BD97 /* SettingsViewController.swift */,
 			);
 			path = tipsy;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				117AFACA1F30210500D3BD97 /* TipViewController.swift in Sources */,
 				117AFAC81F30210500D3BD97 /* AppDelegate.swift in Sources */,
 				117AFAF81F30393100D3BD97 /* SettingsViewController.swift in Sources */,
+				5FF2B9A31F31880A001C39D7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
