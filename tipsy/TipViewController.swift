@@ -50,17 +50,10 @@ class ViewController: UIViewController {
             // Update view
             updateTip()
         }
+         billField.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        defaults.set(Int(NSDate().timeIntervalSince1970), forKey: UserDefaultKeys.timeAppClosed)
-        defaults.set(tipControl.selectedSegmentIndex, forKey: UserDefaultKeys.percentageLastClosed)
-        defaults.set(billField.text, forKey: UserDefaultKeys.billLastClosed)
-        
-        defaults.synchronize()
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,6 +67,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: AnyObject) {
+        defaults.set(tipControl.selectedSegmentIndex, forKey: UserDefaultKeys.percentageLastClosed)
+        defaults.set(billField.text, forKey: UserDefaultKeys.billLastClosed)
+        defaults.synchronize()
         if let billFieldText = billField.text,
             let billFieldValue = Double(billFieldText) {
             bill = billFieldValue
