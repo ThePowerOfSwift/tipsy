@@ -37,11 +37,25 @@ As part of your pre-work submission, please reflect on the app and answer the fo
 
 **Question 1**: "What are your reactions to the iOS app development platform so far? How would you describe outlets and actions to another developer? Bonus: any idea how they are being implemented under the hood? (It might give you some ideas if you right-click on the Storyboard and click Open As->Source Code")
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:** My initial reactions are that XCode is extremely tricky to
+get used to. Coming from an Android development background, it's not
+nearly as intuitive to me as Android Studio. Otherwise Swift seems
+relatively easy to use so far. Storyboards, Outlets, and
+Actions are strange considering how much work it does for you under the
+hood. To another developer, I'd say those three are basically like
+drag-and-drop databinding. Under the hood, it seems as though IBOutlet
+is a variable declaration for the Interface Builder to recognize it as
+an outlet and bind it to a view. IBAction similarly does this for
+functions. When the code is compiled, the word IBOutlet doesn't even
+exist and IBAction is just replaced with void.
 
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:** Closures are reference types, like classes. A closure can
+contain values from its scope leading to a reference cycle. Basically if
+the class instance has a strong reference to closure, and the closure
+has a strong reference to the class instance, you will get a reference
+cycle. If either of those are a weak reference, then it's not a problem.
 
 
 ## License
